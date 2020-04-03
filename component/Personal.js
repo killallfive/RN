@@ -238,7 +238,6 @@ export default class Personal extends Component {
                         <Text style={{ fontSize: 16, color: "#a4a4a4" }} >BINNU DHILLON | 退出</Text>
                     </TouchableOpacity>
                 </View>
-                {/* <Text style={styles.ft_text}>BINNU DHILLON | 退出</Text> */}
             </View>
         )
     }

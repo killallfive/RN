@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     },
     start: {
         position: 'absolute',
-        bottom: 150,
+        bottom: 50,
         width: 120,
         height: 40,
         justifyContent: 'center',

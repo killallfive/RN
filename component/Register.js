@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Text, View, TextInput, TouchableOpacity, Alert, AsyncStorage } from 'react-native'
+import React, { Component } from 'react';
+import { Text, View, TextInput, TouchableOpacity, Alert, AsyncStorage } from 'react-native';
 import { Actions } from "react-native-router-flux";
 import { myFetch } from './utils';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -66,9 +66,10 @@ export default class Register extends Component {
                             alignItems: 'center',
                             paddingLeft: 20,
                         }}>
-                        <Icon name="user" size={20} color={'red'} />
+                        <Icon name="user" size={30} color={'red'} />
                         <TextInput placeholder="用户名"
                             onChangeText={this.userhandle}
+                            style={{ marginLeft: 20, fontSize: 16 }}
                         />
                     </View>
                     <View
@@ -79,13 +80,14 @@ export default class Register extends Component {
                             borderBottomWidth: 1,
                             flexDirection: 'row',
                             alignItems: 'center',
-                            paddingLeft: 20,
+                            paddingLeft: 20
                         }}>
-                        <Icon name="user" size={20} color={'red'} />
+                        <Icon name="tag" size={30} color={'red'} />
                         <TextInput
                             onChangeText={this.pwdhandle}
                             placeholder="密码"
                             secureTextEntry={true}
+                            style={{ marginLeft: 18, fontSize: 16 }}
                         />
                     </View>
                     <View
@@ -98,36 +100,39 @@ export default class Register extends Component {
                             alignItems: 'center',
                             paddingLeft: 20,
                         }}>
-                        <Icon name="user" size={20} color={'red'} />
+                        <Icon name="tags" size={30} color={'red'} />
                         <TextInput
                             onChangeText={this.pwdagainhandle}
                             placeholder="确认密码"
                             secureTextEntry={true}
+                            style={{ marginLeft: 13, fontSize: 16 }}
                         />
                     </View>
                     <TouchableOpacity
                         style={{
                             width: '80%',
-                            height: 40,
-                            backgroundColor: '#ccc',
-                            marginTop: 30,
+                            height: 50,
+                            backgroundColor: 'grey',
+                            marginTop: 200,
                             alignItems: 'center',
-                            justifyContent: 'center'
+                            justifyContent: 'center',
+                            borderRadius: 25
                         }}
                         onPress={this.register}>
-                        <Text>注册</Text>
+                        <Text style={{ fontSize: 24, color: 'white' }}>注册</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={{
                             width: '80%',
-                            height: 40,
+                            height: 50,
                             backgroundColor: '#ccc',
                             marginTop: 30,
                             alignItems: 'center',
-                            justifyContent: 'center'
+                            justifyContent: 'center',
+                            borderRadius: 25
                         }}
                         onPress={Actions.login}>
-                        <Text>返回登录</Text>
+                        <Text style={{ fontSize: 24, color: 'white' }}>返回登录</Text>
                     </TouchableOpacity>
                 </View>
 

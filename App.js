@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, AsyncStorage, Actions } from 'react-native';
-import { Router, Scene, Tabs } from "react-native-router-flux";
+import { View, AsyncStorage, ToastAndroid, BackHandler } from 'react-native';
+import { Router, Scene, Tabs, Actions } from "react-native-router-flux";
 import List from './component/List';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Index from './component/Index';
@@ -20,7 +20,6 @@ const App = () => {
   let init = () => {
     AsyncStorage.getItem('isInstall')
       .then(res => {
-        // console.log('isinstall', res)
         if (res) {
           setInstall(false);
         }
@@ -28,7 +27,6 @@ const App = () => {
     AsyncStorage.getItem('user')
       .then(res => {
         let user = JSON.parse(res)
-        // console.log(user)
         if (!user) {
           SplashScreen.hide();
         }

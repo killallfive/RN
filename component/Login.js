@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, AsyncStorage, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { View, Text, TextInput, TouchableOpacity, AsyncStorage } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { myFetch } from './utils';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 export default class Login extends Component {
     constructor() {
         super();
@@ -48,9 +49,10 @@ export default class Login extends Component {
                             alignItems: 'center',
                             paddingLeft: 20,
                         }}>
-                        <Icon name="user" size={20} color={'red'} />
+                        <Icon name="user" size={30} color={'red'} />
                         <TextInput placeholder="用户名"
                             onChangeText={this.userhandle}
+                            style={{ marginLeft: 10, fontSize: 16 }}
                         />
                     </View>
                     <View
@@ -63,41 +65,47 @@ export default class Login extends Component {
                             alignItems: 'center',
                             paddingLeft: 20,
                         }}>
-                        <Icon name="user" size={20} color={'red'} />
+                        <Icon name="lock" size={30} color={'red'} />
                         <TextInput
                             onChangeText={this.pwdhandle}
                             placeholder="密码"
                             secureTextEntry={true}
+                            style={{ marginLeft: 13, fontSize: 16 }}
                         />
                     </View>
                     <TouchableOpacity
                         style={{
                             width: '80%',
-                            height: 40,
-                            backgroundColor: '#ccc',
-                            marginTop: 30,
+                            height: 50,
+                            backgroundColor: 'grey',
+                            marginTop: 200,
                             alignItems: 'center',
-                            justifyContent: 'center'
+                            justifyContent: 'center',
+                            borderRadius: 25
                         }}
                         onPress={this.login}>
-                        <Text>登录</Text>
+                        <Text style={{ fontSize: 24, color: 'white' }}>登陆</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={{
                             width: '80%',
-                            height: 40,
+                            height: 50,
                             backgroundColor: '#ccc',
                             marginTop: 30,
+                            marginBottom: 30,
                             alignItems: 'center',
-                            justifyContent: 'center'
+                            justifyContent: 'center',
+                            borderRadius: 25
                         }}
                         onPress={Actions.register}>
-                        <Text>注册</Text>
+                        <Text style={{ fontSize: 24, color: 'white' }}>注册</Text>
                     </TouchableOpacity>
                 </View>
                 {
                     this.state.isloading
-                        ? <View><Text>正在登录...</Text></View>
+                        ? <View style={{ alignItems: 'center' }}>
+                            <Text style={{ color: 'green', fontSize: 16 }}>正在登录...</Text>
+                        </View>
                         : null
                 }
             </View>
